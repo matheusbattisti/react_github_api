@@ -47,6 +47,12 @@
   border-right: 1px solid #9da5d1;
 }
 
+.stats .number {
+  background-color: #4ed8c7;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+}
+
 .user a {
   text-align: center;
   background-color: #644aff;
