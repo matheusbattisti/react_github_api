@@ -6,6 +6,8 @@ import { useState, KeyboardEvent } from "react";
 
 import { BsSearch } from "react-icons/bs";
 
+import classes from "./Search.module.css";
+
 const Search = ({ loadUser }: SearchProps) => {
   const [userName, setUserName] = useState("");
 
@@ -16,18 +18,20 @@ const Search = ({ loadUser }: SearchProps) => {
   };
 
   return (
-    <div>
+    <div className={classes.search}>
       <h2>Busque por um usuário:</h2>
       <p>Conheça seus melhores repositórios</p>
-      <input
-        type="text"
-        onChange={(e) => setUserName(e.target.value)}
-        onKeyDown={handleKeyDown}
-        placeholder="Digite o nome do usuário"
-      />
-      <button onClick={() => loadUser(userName)}>
-        <BsSearch />
-      </button>
+      <div className={classes.search_container}>
+        <input
+          type="text"
+          onChange={(e) => setUserName(e.target.value)}
+          onKeyDown={handleKeyDown}
+          placeholder="Digite o nome do usuário"
+        />
+        <button onClick={() => loadUser(userName)}>
+          <BsSearch />
+        </button>
+      </div>
     </div>
   );
 };
